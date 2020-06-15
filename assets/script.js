@@ -1,4 +1,4 @@
-// Build out time block rows.
+// Array of hours that is used for the day planner
 var hoursInDay = [9, 10, 11, 12, 13, 14, 15, 16, 17];
 var hoursString = [
   "9am",
@@ -12,29 +12,25 @@ var hoursString = [
   "5pm",
 ];
 
+// Global variables.
 var hoursInDayIndex = 0;
 var now = moment();
 
 var currentDay = moment().day();
 var dayName = moment(dayName).format("dddd");
-console.log(currentDay);
-let current_Time = moment().format("HH:mm");
-let current_Hour = moment().format("HH");
-console.log(current_Hour);
+var current_Time = moment().format("HH:mm");
+var current_Hour = moment().format("HH");
+var monthDay = moment().format("dddd, MMMM Do, YYYY");
 
-// var currentTime = moment().format("h A");
-//     var blockTime = arrayOfHours[i];
-//     if (blockTime.match(currentTime)) {
-//       $(".time-sensitive").attr("style", "background-color: red");
-//     }
-// Collapse
+// This is displaying the current date on the top of the page.
+$("#currentDay").text(monthDay);
 
+// For loop that dynamically generates the hour rows, columns and buttons.
 for (var i = 0; i < hoursString.length; i++) {
   var dayHours = hoursString;
   var dayHoursNumber = hoursInDay[i];
   var calHour = $("#" + hoursInDay[i]);
 
-  // This block of code is creating the rows, columns and buttons.
   var timeBlockEl = $("<div></div>");
   timeBlockEl.addClass("time-block");
   var hourRows = $("<div></div>");
@@ -67,10 +63,8 @@ for (var i = 0; i < hoursString.length; i++) {
   $(hourRows).append(saveButton);
   $(hourArea).text(dayHours[i]);
 }
-// storeCalendar()
-// renderCalendar()
-// init()
 
+// This is allowing the save button to save the info into localStorage.
 $(".saveBtn").on("click", function () {
   localStorage.setItem("Planner", JSON.stringify("#col-9"));
   var plannerClick = $(this).siblings(".planner").val();
@@ -87,29 +81,3 @@ $("#input-14").val(localStorage.getItem("input-14"));
 $("#input-15").val(localStorage.getItem("input-15"));
 $("#input-16").val(localStorage.getItem("input-16"));
 $("#input-17").val(localStorage.getItem("input-17"));
-//     $('.container').append(timeRows)
-
-// for (var i = 0; i < hoursInDay.length; i++){
-//     var dayHoursNumber = hoursInDay;
-//     hourArea.attr('id', dayHoursNumber[i])
-
-// function storeCalendar() {
-//     // Stringify and set "todos" key in localStorage to todos array
-//     localStorage.setItem("col-9", JSON.stringify(hourColumn));
-//   }
-
-// // Build out save buttons.
-// // Build out text area.
-// // Build out time function.
-// // Build out local storage.
-// function renderCalendar(){
-
-// hourColumn.text('');}
-
-// function init() {
-//     // Get stored todos from localStorage
-//     // Parsing the JSON string to an object
-//     var storedHourly = JSON.parse(localStorage.getItem("col-9"));
-
-//     // If todos were retrieved from localStorage, update the todos array to it
-//     // Render todos to the DOM
