@@ -20,11 +20,11 @@ Any feedback can be provided via email at [kalebgarrison@gmail.com](mailto:kaleb
 3. Once on the browser you will then be able to set your schedule in the day planner. 
 ## Usage 
 
-[Deployed Portfolio Site](https://kalebgarrison.github.io/gt-code-quiz/)
+[Deployed Portfolio Site](https://kalebgarrison.github.io/gt-calendar-hw/)
 
-[GitHub Repo Site](https://github.com/kalebgarrison/gt-code-quiz)
+[GitHub Repo Site](https://github.com/kalebgarrison/gt-calendar-hw)
 
-![alt text](assets/code-quiz.gif) 
+![alt text](assets/dayplanner.png) 
 
 
 
